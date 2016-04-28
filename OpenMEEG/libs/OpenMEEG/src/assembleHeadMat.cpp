@@ -89,7 +89,7 @@ namespace OpenMEEG {
             coef=M(i_first,i_first)/nb_vertices;
             for(std::vector<std::string>::const_iterator mit=git->begin();mit!=git->end();++mit){
                 Mesh msh=geo.mesh(*mit);
-                if(msh.outermost())
+                if(msh.current_barrier())
                     for(Mesh::const_vertex_iterator vit1=msh.vertex_begin();vit1!=msh.vertex_end();++vit1){
                         #pragma omp parallel for
                         #ifndef OPENMP_3_0
