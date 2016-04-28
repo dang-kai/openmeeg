@@ -80,7 +80,7 @@ namespace OpenMEEG {
             i_first=0;
             for(std::vector<std::string>::const_iterator mit=git->begin();mit!=git->end();++mit){
                 const Mesh msh=geo.mesh(*mit);
-                if(msh.outermost()){
+                if(msh.current_barrier()){
                     nb_vertices+=msh.nb_vertices();
                     if(i_first==0)
                         i_first=(*msh.vertex_begin())->index();
